@@ -28,4 +28,4 @@ Bienvenidos al repositorio de ValoArt. Este es un proyecto en desarrollo que te 
 
 ## Servidor de discord donde encontrar y compartir dibujos: https://discord.gg/7xmvZYebeu
 
-## Programa para tener todos los copys a mano: https://github.com/VxwxV-SAN/biblioteca-de-copy-pastes/tree/main
+## Programa para tener todos los copys a mano: https://github.com/VxwxV-SAN/ValoArt-Copys
