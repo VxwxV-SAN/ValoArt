@@ -118,6 +118,8 @@ class copys:
             "▗": "▖",
             "▘": "▝",
             "▝": "▘",
+            "▟":"▙",
+            "▙":"▟",
             "▛": "▜",
             "▜": "▛",
             "▞": "▚",
@@ -260,6 +262,7 @@ class copys:
         self.save_data()
 
 root = tk.Tk()
+root.iconbitmap("logo.ico")
 root.configure(bg="#333333")
 app = copys(root)
 root.bind("<ButtonRelease-1>", app.stop_drawing)
