@@ -13,7 +13,7 @@ Bienvenidos al repositorio de ValoArt. Este es un proyecto en desarrollo que te 
 ## [Descargar](https://github.com/VxwxV-SAN/ValoArt/releases/download/1%2C0/ValoArt.zip)
 
 ## Instalación 
-- Si descargas directamente el repositorio, solo debes descargar, descomprimir y ejecutar "ValoArt.exe". También puedes crear un acceso directo en el escritorio para tenerlo más a mano.
+- Si descargas directamente el repositorio, solo debes descomprimir y ejecutar "ValoArt.exe". También puedes crear un acceso directo en el escritorio para tenerlo más a mano.
 - Si has descargado el código previamente, lamento que esté un poco desordenado. Con setup puedes convertir el  .py en un ejecutable. Recuerda que "data.json" y "cuack.mp3" deben estar dentro de la carpeta del ejecutable para que el código funcione.
 
 ## Cómo usarlo
