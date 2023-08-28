@@ -6,9 +6,10 @@ Bienvenidos al repositorio de ValoArt. Este es un proyecto en desarrollo que te 
 
 ## Capturas de Pantalla
 
-![Captura de Pantalla 1](https://github.com/VxwxV-SAN/VxwxV-Valorant-Copy-Pastes/assets/143349085/69d6a158-7360-4b64-baf8-ee2553b39edc)
+![Captura de Pantalla 1](https://github.com/VxwxV-SAN/ValoArt/assets/143349085/62caff3e-836a-4842-88d2-6f6062f5146c)
 
-![Captura de Pantalla 2](https://github.com/VxwxV-SAN/VxwxV-Valorant-Copy-Pastes/assets/143349085/1e7fb791-a0c8-4a3f-a301-1f221deba226)
+![Captura de Pantalla 2](https://github.com/VxwxV-SAN/ValoArt/assets/143349085/257e16fc-79e2-427d-b01c-52befc19ce29)
+
 
 
 ## Instalación 
