@@ -26,6 +26,6 @@ Bienvenidos al repositorio de ValoArt. Este es un proyecto en desarrollo que te 
 - El botón de espejo hará que tu dibujo mire hacia el otro lado.
 - Con el botón de volcar, podrás seleccionar un carácter con el que hayas dibujado para que sea reemplazado por otro.
 
-## Servidor de discord donde encontrar y compartir dibujos: https://discord.gg/7xmvZYebeu
+## [Servidor de discord donde encontrar y compartir dibujos](https://discord.gg/7xmvZYebeu) 
 
-## Programa para tener todos los copys a mano: https://github.com/VxwxV-SAN/ValoArt-Copys
+## [Programa para tener todos los copys a mano](https://github.com/VxwxV-SAN/ValoArt-Copys)
