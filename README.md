@@ -13,7 +13,7 @@ Bienvenidos al repositorio de ValoArt. Este es un proyecto en desarrollo que te 
 
 ## Instalación 
 - Si descargas directamente el repositorio, solo debes descargar, descomprimir y ejecutar "ValoArt.exe". También puedes crear un acceso directo en el escritorio para tenerlo más a mano.
-- Si has descargado el código previamente, lamento que esté un poco desordenado. Con setup puedes convertir el  .py en un ejecutable. Recuerda que "data.json", "logo.ico" y "cuack.mp3" deben estar dentro de la carpeta del ejecutable para que el código funcione.
+- Si has descargado el código previamente, lamento que esté un poco desordenado. Con setup puedes convertir el  .py en un ejecutable. Recuerda que "data.json" y "cuack.mp3" deben estar dentro de la carpeta del ejecutable para que el código funcione.
 
 ## Cómo usarlo
 - Debes seleccionar el carácter con el que quieras dibujar.
