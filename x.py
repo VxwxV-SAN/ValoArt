@@ -9,7 +9,7 @@ class copys:
         self.root = root
         self.root.title("ValoArt VxwxV")
         self.root.state("zoomed")
-        self.cell_size = 70
+        self.cell_size = 61
         self.canvas_width = 26 * self.cell_size
         self.canvas_height = 13 * self.cell_size
         self.canvas = tk.Canvas(root, width=self.canvas_width, height=self.canvas_height)
@@ -142,9 +142,12 @@ class copys:
         self.canvas.itemconfig(self.cells[y][x], text=self.current_char)
 
     def copy_text(self, event=None):
-        copied_text = "\n".join(["".join([self.canvas.itemcget(cell, "text") for cell in row]) for row in self.cells])
+        copied_text = [([self.canvas.itemcget(cell, "text") for cell in row]) for row in self.cells]
+        copied_text = str(copied_text).replace('{', '').replace('}', '').replace(' ', '').replace('\n', '').replace('[', '').replace(']', '').replace(',', '').replace("''", '')
         root.clipboard_clear()
         root.clipboard_append(copied_text)
+
+
 
     def reset_grid(self):
         for row in self.cells:
