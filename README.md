@@ -10,7 +10,7 @@ Bienvenidos al repositorio de ValoArt. Este es un proyecto en desarrollo que te 
 
 ![Captura de Pantalla 2](https://github.com/VxwxV-SAN/ValoArt/assets/143349085/257e16fc-79e2-427d-b01c-52befc19ce29)
 
-## [Descargar](https://github.com/VxwxV-SAN/ValoArt/releases/download/1%2C0/ValoArt.zip)
+## [Descargar](https://github.com/VxwxV-SAN/ValoArt/releases/download/1.1/ValoArt.zip)
 
 ## Instalación 
 - Si descargas directamente el repositorio, solo debes descomprimir y ejecutar "ValoArt.exe". También puedes crear un acceso directo en el escritorio para tenerlo más a mano.
