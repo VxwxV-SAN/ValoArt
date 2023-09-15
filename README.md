@@ -1,8 +1,14 @@
 # ValoArt
+
+## [Descargar](https://github.com/VxwxV-SAN/ValoArt/releases/download/1.1/ValoArt.zip)
+
+## [Servidor de discord donde encontrar y compartir dibujos](https://discord.gg/MT252wJAgw) 
+
+## [Programa para tener todos los copys a mano](https://github.com/VxwxV-SAN/ValoArt-Copys)
+
 - **¡Contribuciones son bienvenidas!** Si eres nuevo en el desarrollo, este es un proyecto amigable para aprender y colaborar.
 
 Bienvenidos al repositorio de ValoArt. Este es un proyecto en desarrollo que te permite crear y visualizar dibujos en modo pixel art dentro del chat del juego Valorant.
-
 
 ## Capturas de Pantalla
 
@@ -10,7 +16,6 @@ Bienvenidos al repositorio de ValoArt. Este es un proyecto en desarrollo que te 
 
 ![Captura de Pantalla 2](https://github.com/VxwxV-SAN/ValoArt/assets/143349085/257e16fc-79e2-427d-b01c-52befc19ce29)
 
-## [Descargar](https://github.com/VxwxV-SAN/ValoArt/releases/download/1.1/ValoArt.zip)
 
 ## Instalación 
 - Si descargas directamente el repositorio, solo debes descomprimir y ejecutar "ValoArt.exe". También puedes crear un acceso directo en el escritorio para tenerlo más a mano.
@@ -26,6 +31,4 @@ Bienvenidos al repositorio de ValoArt. Este es un proyecto en desarrollo que te 
 - El botón de espejo hará que tu dibujo mire hacia el otro lado.
 - Con el botón de volcar, podrás seleccionar un carácter con el que hayas dibujado para que sea reemplazado por otro.
 
-## [Servidor de discord donde encontrar y compartir dibujos](https://discord.gg/MT252wJAgw) 
 
-## [Programa para tener todos los copys a mano](https://github.com/VxwxV-SAN/ValoArt-Copys)
