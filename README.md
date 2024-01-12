@@ -1,6 +1,6 @@
 # ValoArt
 
-## [Descargar](https://github.com/VxwxV-SAN/ValoArt/releases/download/1.1/ValoArt.zip)
+## [Descargar](https://github.com/VxwxV-SAN/ValoArt/releases/latest/download/ValoArt.zip)
 
 ## [Servidor de discord donde encontrar y compartir dibujos](https://discord.gg/MT252wJAgw) 
 
