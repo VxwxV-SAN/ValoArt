@@ -14,7 +14,7 @@ Bienvenidos al repositorio de ValoArt. Este es un proyecto en desarrollo que te 
 
 ![Captura de Pantalla 1](https://github.com/VxwxV-SAN/ValoArt/assets/143349085/62caff3e-836a-4842-88d2-6f6062f5146c)
 
-![Captura de Pantalla 2](https://github.com/VxwxV-SAN/ValoArt/assets/143349085/257e16fc-79e2-427d-b01c-52befc19ce29)
+![Captura de Pantalla 2](https://github.com/VxwxV-SAN/ValoArt/assets/143349085/bc3f1a41-71cc-4a8b-8353-551cdb82b5f9)
 
 
 ## Instalación 
