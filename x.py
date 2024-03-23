@@ -1,44 +1,51 @@
-import tkinter as tk
-from tkinter import ttk
+
 import json
 import pygame 
-from tkinter import Text
+import customtkinter as ctk
+import tkinter as tk
+import json
+import pygame
+
+color_botones="#6C3483"
+color_seleccionado = "#3498DB"
+ancho_boton = 102
 
 class copys:
     def __init__(self, root):
         self.root = root
-        self.root.title("ValoArt VxwxV")
+        self.root.title("ValoArt")
         self.root.state("zoomed")
         self.cell_size = 61
         self.canvas_width = 26 * self.cell_size
         self.canvas_height = 13 * self.cell_size
-        self.canvas = tk.Canvas(root, width=self.canvas_width, height=self.canvas_height)
-        self.canvas.pack()
         self.current_char = "█"
-        self.char_options = ["─", "█", "▓", "▒", "░","■","▌", "▐","▄","▀", "▖", "▗", "▘", "▝", "▙", "▟", "▛", "▜", "▞", "▚"]
+        self.char_options = ["─", "█", "▓", "▒", "░", "■", "▌", "▐", "▄", "▀", "▖", "▗", "▘", "▝", "▙", "▟", "▛", "▜", "▞", "▚"]
         self.is_drawing = False
         self.selected_button = None
-        self.root.bind("<Up>", self.shift_up) 
-        self.root.bind("<Down>", self.shift_down)  
-        self.root.bind("<Left>", self.shift_left)  
+        self.root.bind("<Up>", self.shift_up)
+        self.root.bind("<Down>", self.shift_down)
+        self.root.bind("<Left>", self.shift_left)
         self.root.bind("<Right>", self.shift_right)
         self.root.bind("<Control-c>", self.copy_text)
         self.root.bind("<Control-v>", self.insert_text)
+        self.canvas = ctk.CTkCanvas(root, width=self.canvas_width, height=self.canvas_height)
+        self.canvas.pack(pady=40)
         self.create_buttons()
         self.create_grid()
         self.load_saved_data()
+        self.fade_in()
+
+    def fade_in(self):
+
+        for opacity in range(0, 11):
+            self.root.attributes('-alpha', opacity / 10)
+            self.root.update()
+            self.root.after(50)
 
     def create_buttons(self):
-        style = ttk.Style()
-        style.configure("Dark.TFrame", background="#333333")
-        style.configure("Dark.TButton", background="black", foreground="black",font=("Fixedsys"))  
-        style.configure("Selected.TButton", background="white", foreground="blue", font=("Fixedsys"))
-        button_frame = ttk.Frame(root, style="Dark.TFrame")
+        button_frame = ctk.CTkFrame(self.root, fg_color="#333333") 
         button_frame.pack()
-
         num_buttons = len(self.char_options)
-
-
         buttons_per_row = 1
         while num_buttons > buttons_per_row * 2:
             buttons_per_row += 1
@@ -47,30 +54,31 @@ class copys:
 
         self.button_dict = {}
         for i, char in enumerate(self.char_options):
-            char_button = ttk.Button(button_frame, text=char, command=lambda c=char: self.select_char(c), style="Dark.TButton")
+            char_button = ctk.CTkButton(button_frame, text=char, command=lambda c=char: self.select_char(c),
+                                        fg_color="#4A235A", text_color="white",width=ancho_boton)  
             self.button_dict[char] = char_button
-            if i < len(self.char_options) // 2:  
-                char_button.grid(row=0, column=i, padx=5, pady=10)
+            if i < len(self.char_options) // 2:
+                char_button.grid(row=0, column=i, padx=10, pady=10)
             else:
                 char_button.grid(row=1, column=i - len(self.char_options) // 2, padx=5, pady=10)
 
-        copy_button = ttk.Button(button_frame, text="Copiar", command=self.copy_text, style="Dark.TButton")
+        copy_button = ctk.CTkButton(button_frame, text="Copiar", command=self.copy_text, fg_color=color_botones, text_color="white",width=ancho_boton)
         copy_button.grid(row=0, column=len(self.char_options) + 1, padx=10, pady=10)
 
-        reset_button = ttk.Button(button_frame, text="Rellenar", command=self.reset_grid, style="Dark.TButton")
+        reset_button = ctk.CTkButton(button_frame, text="Rellenar", command=self.reset_grid, fg_color=color_botones, text_color="white",width=ancho_boton)
         reset_button.grid(row=0, column=len(self.char_options) + 2, padx=10, pady=10)
 
-        insert_button = ttk.Button(button_frame, text="Insertar", command=self.insert_text, style="Dark.TButton")
+        insert_button = ctk.CTkButton(button_frame, text="Insertar", command=self.insert_text, fg_color=color_botones, text_color="white",width=ancho_boton)
         insert_button.grid(row=0, column=len(self.char_options) + 3, padx=10, pady=10)
 
-        self.invert_button = ttk.Button(button_frame, text="Volcar", command=self.show_replace_window, style="Dark.TButton")
+        self.invert_button = ctk.CTkButton(button_frame, text="Volcar", command=self.show_replace_window, fg_color=color_botones, text_color="white",width=ancho_boton)
         self.invert_button.grid(row=1, column=len(self.char_options) + 1, padx=10, pady=10)
 
-        self.mirror_button = ttk.Button(button_frame, text="Espejo", command=self.mirror_text, style="Dark.TButton")
-        self.mirror_button.grid(row=1, column=len(self.char_options) + 2, padx=5, pady=10)
+        self.mirror_button = ctk.CTkButton(button_frame, text="Espejo", command=self.mirror_text, fg_color=color_botones, text_color="white",width=ancho_boton)
+        self.mirror_button.grid(row=1, column=len(self.char_options) + 2, padx=10, pady=10)
 
-        cuack_button = ttk.Button(button_frame, text="cuack", command=self.play_cuack_sound, style="Dark.TButton")
-        cuack_button.grid(row=1, column=len(self.char_options) + 3, padx=5, pady=10)
+        cuack_button = ctk.CTkButton(button_frame, text="cuack", command=self.play_cuack_sound, fg_color=color_botones, text_color="white",width=ancho_boton)
+        cuack_button.grid(row=1, column=len(self.char_options) + 3, padx=10, pady=10)
 
     def create_grid(self):
         self.cells = []
@@ -94,11 +102,11 @@ class copys:
         self.canvas.bind("<B1-Motion>", self.on_canvas_drag)
 
     def select_char(self, char):
-        self.current_char = char
         if self.selected_button:
-            self.selected_button.configure(style="Dark.TButton")
+            self.selected_button.configure(fg_color="#4A235A")  
+        self.current_char = char
         self.selected_button = self.button_dict[char]
-        self.selected_button.configure(style="Selected.TButton")
+        self.selected_button.configure(fg_color=color_seleccionado)
     	
     def on_canvas_click(self, event):
         self.is_drawing = True
@@ -171,33 +179,39 @@ class copys:
             pass
 
     def show_replace_window(self):
-        replace_window = tk.Toplevel(self.root)
+        replace_window = ctk.CTkToplevel(self.root)
         replace_window.title("Volcado")
+        replace_window.geometry("450x100") 
+        window_width = replace_window.winfo_reqwidth()
+        window_height = replace_window.winfo_reqheight()
+        position_right = int(replace_window.winfo_screenwidth()/2 - window_width/2)
+        position_down = int(replace_window.winfo_screenheight()/2 - window_height/2)
+        replace_window.geometry("+{}+{}".format(position_right, position_down))
+        replace_window.lift()
+        replace_window.attributes('-topmost',True)
+        replace_window.after_idle(replace_window.attributes,'-topmost',False)
 
-        char_frame = ttk.Frame(replace_window)
+        char_frame = ctk.CTkFrame(replace_window)
         char_frame.pack(side="left", padx=10, pady=10)
 
-        replace_frame = ttk.Frame(replace_window)
+        replace_frame = ctk.CTkFrame(replace_window)
         replace_frame.pack(side="right", padx=10, pady=10)
 
-        label1 = ttk.Label(char_frame, text="Carácter a reemplazar:")
+        label1 = ctk.CTkLabel(char_frame, text="Carácter a reemplazar:")
         label1.pack()
 
-        selected_char = tk.StringVar()
-        char_combobox = ttk.Combobox(char_frame, textvariable=selected_char, values=self.char_options)
+        char_combobox = ctk.CTkComboBox(char_frame, values=self.char_options,fg_color=color_botones)
         char_combobox.pack(padx=10, pady=5)
 
-        label2 = ttk.Label(replace_frame, text="Por:")
+        label2 = ctk.CTkLabel(replace_frame, text="Por:")
         label2.pack()
 
-        replace_selected = tk.StringVar()
-        replace_combobox = ttk.Combobox(replace_frame, textvariable=replace_selected, values=self.char_options)
+        replace_combobox = ctk.CTkComboBox(replace_frame, values=self.char_options, fg_color=color_botones)
         replace_combobox.pack(padx=10, pady=5)
 
-        accept_button = ttk.Button(replace_window, text="Aceptar", command=lambda: self.replace_char(selected_char.get(), replace_selected.get()))
+        accept_button = ctk.CTkButton(replace_window, text="Aceptar", fg_color=color_botones, command=lambda: self.replace_char(char_combobox.get(), replace_combobox.get()))
         accept_button.pack(pady=10)
-        replace_window.iconbitmap("logo.ico")
-        
+
     def replace_char(self, char_to_replace, char_to_replace_with):
         if char_to_replace not in self.char_options or char_to_replace_with not in self.char_options:
             return
@@ -261,8 +275,8 @@ class copys:
 
         self.save_data()
 
-root = tk.Tk()
-root.iconbitmap("logo.ico")
+root = ctk.CTk()
+root.iconbitmap("logo.ico")  
 root.configure(bg="#333333")
 app = copys(root)
 root.bind("<ButtonRelease-1>", app.stop_drawing)
